@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Uploaded</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+</head>
+<body style="font-family:system-ui, Arial; max-width:900px; margin:2rem auto">
+  <h2>File uploaded ✅</h2>
+  <p>Share this link (and the password) to allow download:</p>
+  <p><a href="{{ link }}">{{ link }}</a></p>
+  {% if expires_at %}
+  <p>Expires at: {{ expires_at }} UTC</p>
+  {% endif %}
+  {% if one_time %}
+  <p><strong>Note:</strong> This is a one-time download link.</p>
+  {% endif %}
+  <p><a href="/">Upload another</a></p>
+</body>
+</html>

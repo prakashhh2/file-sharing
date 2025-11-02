@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Download file</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+</head>
+<body style="font-family:system-ui, Arial; max-width:900px; margin:2rem auto">
+  <h2>Download: {{ filename or "file" }}</h2>
+  {% if error %}
+    <p style="color:crimson">{{ error }}</p>
+  {% endif %}
+  {% if filename %}
+    <form method="post">
+      <label>Enter password to download:<br/><input type="password" name="password" required></label><br/><br/>
+      <button type="submit">Download</button>
+    </form>
+  {% endif %}
+  <p><a href="/">Back to upload</a></p>
+</body>
+</html>
