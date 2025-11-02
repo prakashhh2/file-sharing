@@ -157,6 +157,7 @@ def download_token(token):
         presigned = s3.generate_presigned_url('get_object',
                                               Params={'Bucket': S3_BUCKET, 'Key': entry.stored_name},
                                               ExpiresIn=60)  # short-lived
+        
         return redirect(presigned)
     else:
         path = UPLOAD_FOLDER / entry.stored_name
@@ -197,4 +198,5 @@ def health():
     return "OK"
 
 if __name__ == "__main__":
+    
     app.run(host="0.0.0.0", port=int(os.getenv("PORT", 5000)))
